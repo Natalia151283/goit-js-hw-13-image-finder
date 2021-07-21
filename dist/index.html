@@ -5,8 +5,26 @@
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="/src.e31bb0bc.css"></head>
 <body>
+<div class="conteiner">
+    <form class="search-form" id="search-form">
+        <input type="text" name="query" autocomplete="off" placeholder="Search images...">
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+      </form>
+    <div class="conteiner-gallery">
+        <ul class="gallery">
+            <!-- Список <li> с карточками изображений -->
+          </ul>
+    </div>
+<button type="button" class="btn btn -primary button" data-action="load-more">
+<span class="spinner-border spinner-border-sm spinner is-hidden" role="status" aria-hidden="true">
+</span>
+    <span class="label">Load more</span>
+</button>
+
+</div>
 <script src="/src.e31bb0bc.js"></script>
 </body>
 </html>

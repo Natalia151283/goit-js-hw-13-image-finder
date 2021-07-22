@@ -5,15 +5,20 @@ export default class newApiServer{
         this.searchQuery = ''
         this.page=1
         }
-    fetchArticles(){
-        console.log('до запроса', this)
-        const url = `${BASE_URL}&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KEY}`;
-     return fetch(url)
-        .then(r => r.json())
-        .then(({hits})=> {
-            this.incremenPage();
-           return hits;
-        });
+   async  fetchArticles(){
+      
+        const url = await fetch(`${BASE_URL}&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KEY}`);
+        const {hits} = await url.json()
+        
+              return hits;
+         
+    //     const url = `${BASE_URL}&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KEY}`;
+    //  return fetch(url)
+    //     .then(r => r.json())
+    //     .then(({hits})=> {
+    //         this.incremenPage();
+    //        return hits;
+    //     });
         }
 
         incremenPage(){

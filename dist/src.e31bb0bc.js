@@ -2420,15 +2420,18 @@ class newApiServer {
     this.page = 1;
   }
 
-  fetchArticles() {
-    console.log('до запроса', this);
-    const url = `${BASE_URL}&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KEY}`;
-    return fetch(url).then(r => r.json()).then(({
+  async fetchArticles() {
+    const url = await fetch(`${BASE_URL}&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KEY}`);
+    const {
       hits
-    }) => {
-      this.incremenPage();
-      return hits;
-    });
+    } = await url.json();
+    return hits; //     const url = `${BASE_URL}&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KEY}`;
+    //  return fetch(url)
+    //     .then(r => r.json())
+    //     .then(({hits})=> {
+    //         this.incremenPage();
+    //        return hits;
+    //     });
   }
 
   incremenPage() {
@@ -2564,7 +2567,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55883" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58548" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -9,8 +9,7 @@ const basicLightbox = require('basiclightbox');
 const  refs = {
     searchForm: document.querySelector('#search-form'),
     galleryConteiner: document.querySelector('.gallery'),
-    // loadMoreBtn: document.querySelector('[data-action="load-more"]'),
-    // listItem: document.querySelector('.gallery-item')
+   
 }
 
 const loadMoreBtn = new LoadMoreBtn({
